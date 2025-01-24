@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap");
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='0' y='15' font-size='14' fill='%23ff7eb9'%3E📝%3C/text%3E%3Ctext x='30' y='50' font-size='14' fill='%23ffa801'%3E📋%3C/text%3E%3Ctext x='50' y='80' font-size='14' fill='%2367e6dc'%3E✏️%3C/text%3E%3Ctext x='80' y='20' font-size='14' fill='%239b5de5'%3E📓%3C/text%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  background-repeat: repeat;
+}
+
+.app-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #ff7eb9, #ffa801);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  color: #ffffff;
+}
+
+.app-header {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.add-task {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid white;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.submit-task {
+  background-color: #67e6dc;
+  color: #ffffff;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 0 12px rgba(238, 156, 167, 0.5);
+}
+
+.submit-task:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #191933;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.task-list-item:hover {
+  transform: translateY(-2px);
+}
+
+.task-list-item-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  flex-grow: 1;
+}
+
+.task-name {
+  flex-grow: 1;
+}
+
+.task-list-item-label .completed {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.task-date-time {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: right;
+  white-space: nowrap;
+  margin-right: 15px;
+}
+
+.delete-btn {
+  color: #af4147;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  color: #e63946;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff7eb9, #ffa801);
+  border-radius: 4px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#modalConfirmButton {
+  background-color: #67e6dc;
+  color: #ffffff;
+}
+
+#modalCancelButton {
+  background-color: #e63946;
+  color: #ffffff;
+}
+
+/* Line-through effect when completed */
+.completed {
+  text-decoration: line-through;
+}
+/* Flashing effect */
+.flashing {
+  animation: flash 1s infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}

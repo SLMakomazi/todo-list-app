@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1 class="app-header">TO DO LIST</h1>
+    <div class="add-task">
+      <input type="text" id="taskInput" autocomplete="off" placeholder="Add New Task" class="task-input">
+      <button id="addTaskButton" class="submit-task" title="Add Task">+</button>
+    </div>
+    <ul id="taskList" class="task-list"></ul>
+  </div>
+
+  <!-- Modal for Date and Time Selection -->
+  <div id="dateTimeModal" class="modal">
+    <div class="modal-content">
+      <h3>Select Date and Time</h3>
+      <label for="taskDate">Date:</label>
+      <input type="date" id="taskDate" />
+
+      <label for="taskTime">Time:</label>
+      <select id="taskTime">
+        <!-- Time options will be dynamically populated -->
+      </select>
+
+      <div class="modal-buttons">
+        <button id="modalConfirmButton">Confirm</button>
+        <button id="modalCancelButton">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
